@@ -1,4 +1,6 @@
-const components = {
+import type { ThemeOptions } from "@mui/material/styles";
+
+const components: ThemeOptions["components"] = {
   MuiButton: {
     styleOverrides: {
       root: {

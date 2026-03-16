@@ -1,4 +1,6 @@
-const typography = {
+import type { ThemeOptions } from "@mui/material/styles";
+
+const typography: ThemeOptions["typography"] = {
   fontFamily: `"Plus Jakarta Sans", "Roboto", "Helvetica", "Arial", sans-serif`,
 
   h1: {
