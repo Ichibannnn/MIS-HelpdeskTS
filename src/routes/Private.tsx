@@ -7,9 +7,13 @@ interface Props {
 
 const Private = ({ Render }: Props) => {
   const fullname = useAppSelector((state) => state?.user?.fullname);
-  const permission = useAppSelector((state) => state?.user?.permission);
+  const permissions = useAppSelector((state) => state?.user?.permissions);
 
-  return !fullname || permission?.length === 0 ? <Navigate to="/login" /> : <PermittedRoutes Render={Render} />;
+  return !fullname || permissions?.length === 0 ? (
+    <Navigate to="/login" />
+  ) : (
+    <PermittedRoutes Render={Render} />
+  );
 };
 
 export default Private;

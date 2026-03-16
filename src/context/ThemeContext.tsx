@@ -9,7 +9,9 @@ interface ThemeModeContextType {
   toggleTheme: () => void;
 }
 
-const ThemeModeContext = createContext<ThemeModeContextType | undefined>(undefined);
+const ThemeModeContext = createContext<ThemeModeContextType | undefined>(
+  undefined,
+);
 
 interface Props {
   children: React.ReactNode;
@@ -21,7 +23,9 @@ export const ThemeModeProvider = ({ children }: Props) => {
 
     if (savedMode) return savedMode;
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   };
 
   const [mode, setMode] = useState<ThemeMode>(getInitialMode);

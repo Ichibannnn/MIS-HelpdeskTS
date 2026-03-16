@@ -1,7 +1,20 @@
-interface Props {}
+import type { ReactNode } from "react";
+import { useAppSelector } from "../hooks/useRedux";
+import { Navigate } from "react-router";
 
-const AuthRedirect = (props: Props) => {
-  return <div>AuthRedirect</div>;
+interface Props {
+  children: ReactNode;
+}
+
+const AuthRedirect: React.FC<Props> = ({ children }) => {
+  const fullname = useAppSelector((state) => state?.user?.fullname);
+  const permissions = useAppSelector((state) => state?.user?.permissions);
+
+  if (fullname && permissions?.length > 0) {
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
 };
 
 export default AuthRedirect;
