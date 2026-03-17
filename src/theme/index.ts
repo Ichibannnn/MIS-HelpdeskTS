@@ -5,7 +5,7 @@ import components from "./component";
 
 const getTheme = (mode: PaletteMode) =>
   createTheme({
-    palette: palette(mode),
+    ...palette(mode),
     typography,
     components,
   });

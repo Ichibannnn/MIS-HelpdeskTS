@@ -1,7 +1,7 @@
 import type { ThemeOptions } from "@mui/material/styles";
 
 const typography: ThemeOptions["typography"] = {
-  fontFamily: `"Plus Jakarta Sans", "Roboto", "Helvetica", "Arial", sans-serif`,
+  fontFamily: "Inter, sans-serif",
 
   h1: {
     fontWeight: 700,

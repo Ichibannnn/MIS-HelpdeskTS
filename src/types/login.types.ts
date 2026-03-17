@@ -9,5 +9,5 @@ export interface LoginResponse {
   fullname: string;
   username: string;
   userRolename: string;
-  permission: string[];
+  permission?: string[];
 }
