@@ -14,6 +14,10 @@ const palette = (mode: PaletteMode): ThemeOptions => ({
             default: "#F7F9FB",
             paper: "#FFFFFF",
           },
+          text: {
+            primary: "#111827",
+            secondary: "#76808d",
+          },
         }
       : {
           primary: { main: "#9e77ed" },
@@ -25,14 +29,16 @@ const palette = (mode: PaletteMode): ThemeOptions => ({
             default: "#111827",
             paper: "#1F2937",
           },
+          text: {
+            primary: "#EDF2F7",
+            secondary: "#A0AEC0",
+          },
         }),
   },
 
   custom: {
     loginBackground:
-      mode === "light"
-        ? "linear-gradient(227deg, rgba(83, 59, 140, 1) 21%, rgba(242, 242, 242, 1) 81%)"
-        : "linear-gradient(227deg, rgba(83, 59, 140, 1) 21%, #0e1320 81%)",
+      mode === "light" ? "linear-gradient(227deg, rgba(83, 59, 140, 1) 21%, rgba(242, 242, 242, 1) 81%)" : "linear-gradient(227deg, rgba(83, 59, 140, 1) 21%, #0e1320 81%)",
   },
 });
 

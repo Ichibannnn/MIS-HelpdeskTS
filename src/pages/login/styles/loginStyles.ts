@@ -51,13 +51,6 @@ export const loginStyles = {
     alignItems: "center",
   } as SxProps<Theme>,
 
-  loginRight: {
-    width: "50%",
-    padding: 4,
-    alignItems: "center",
-    justifyContent: "center",
-  } as SxProps<Theme>,
-
   svg: {
     width: "320px",
     height: "320px",
@@ -83,8 +76,29 @@ export const loginStyles = {
   } as SxProps<Theme>,
 
   footerTitle: {
-    color: "#000",
+    color: "#FFFFFF",
     textAlign: "center",
     fontSize: "11px",
+  } as SxProps<Theme>,
+
+  loginRight: {
+    width: "50%",
+    padding: 4,
+    alignItems: "center",
+    marginTop: 4,
+    gap: 0,
+  } as SxProps<Theme>,
+
+  loginRightContent: {
+    width: "100%",
+    alignItems: "center",
+  } as SxProps<Theme>,
+
+  helpdeskLogo: {
+    width: "65px",
+    objectFit: "fill",
+    zIndex: 1,
+    top: 0,
+    textAlign: "center",
   } as SxProps<Theme>,
 };
