@@ -10,14 +10,32 @@ const components: ThemeOptions["components"] = {
     },
     defaultProps: {
       disableElevation: true,
+      size: "small",
     },
   },
 
   MuiTextField: {
     defaultProps: {
       variant: "outlined",
-      size: "small",
+      // size: "small",
       fullWidth: true,
+    },
+  },
+
+  MuiOutlinedInput: {
+    styleOverrides: {
+      root: {
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+          borderColor: "#9e77ed",
+        },
+
+        "&:active .MuiOutlinedInput-notchedOutline": {
+          borderColor: "#9e77ed",
+        },
+        "&.Mui-disabled .MuiOutlinedInput-notchedOutline": {
+          borderColor: "#2D3748",
+        },
+      },
     },
   },
 

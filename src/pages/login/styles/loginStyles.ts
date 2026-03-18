@@ -85,7 +85,7 @@ export const loginStyles = {
     width: "50%",
     padding: 4,
     alignItems: "center",
-    marginTop: 4,
+    marginTop: 11,
     gap: 0,
   } as SxProps<Theme>,
 
