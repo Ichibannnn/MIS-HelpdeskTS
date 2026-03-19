@@ -10,6 +10,8 @@ const Private = ({ Render }: Props) => {
   const fullname = useAppSelector((state) => state?.user?.fullname);
   const permissions = useAppSelector((state) => state?.user?.permissions);
 
+  console.log("Permissions: ", permissions);
+
   return !fullname || permissions?.length === 0 ? <Navigate to="/login" /> : <PermittedRoutes Render={Render} />;
 };
 

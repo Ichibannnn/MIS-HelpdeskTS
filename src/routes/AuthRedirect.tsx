@@ -10,6 +10,8 @@ const AuthRedirect: React.FC<Props> = ({ children }) => {
   const fullname = useAppSelector((state) => state?.user?.fullname);
   const permissions = useAppSelector((state) => state?.user?.permissions ?? []);
 
+  // console.log("")
+
   if (fullname && permissions?.length > 0) {
     return <Navigate to="/" replace />;
   }

@@ -3,11 +3,16 @@ export interface LoginRequest {
   password: string;
 }
 
-export interface LoginResponse {
+export interface LoginValue {
+  token: string;
   id: string;
   empId: string;
   fullname: string;
   username: string;
   userRolename: string;
   permission?: string[];
+}
+
+export interface LoginResponse {
+  value: LoginValue;
 }

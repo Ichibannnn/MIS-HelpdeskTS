@@ -15,10 +15,12 @@ export const auth = createSlice({
   initialState,
   reducers: {
     signIn: (state, action: PayloadAction<string>) => {
-      ((state.isAuthenticated = true), (state.token = action.payload));
+      state.isAuthenticated = true;
+      state.token = action.payload;
     },
-    signOut: (state, action: PayloadAction<string>) => {
-      ((state.isAuthenticated = false), (state.token = action.payload));
+    signOut: (state) => {
+      state.isAuthenticated = false;
+      state.token = null;
     },
   },
 });

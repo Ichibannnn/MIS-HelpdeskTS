@@ -7,7 +7,7 @@ export const api = createApi({
     prepareHeaders: (headers) => {
       headers.set("Accept", "application/json");
 
-      const token = sessionStorage.getITem("token");
+      const token = sessionStorage.getItem("token");
 
       if (token) {
         headers.set("Authorization", `Bearer ${sessionStorage.getItem("token")}`);
