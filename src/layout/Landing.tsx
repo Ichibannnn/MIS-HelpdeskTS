@@ -1,48 +1,54 @@
-// import { useNavigate } from "react-router";
-// import { useAppDispatch, useAppSelector } from "../hooks/useRedux";
-// import { Button, IconButton } from "@mui/material";
-// import { signOut } from "../features/auth/authSlice";
-// import { clearUserDetails } from "../features/user/userSlice";
-// import { useThemeMode } from "../context/ThemeContext";
-// import { DarkMode, LightMode } from "@mui/icons-material";
-
+// components/Landing.tsx
 import { Box, Stack } from "@mui/material";
 import { Outlet } from "react-router";
+
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 const Landing = () => {
-  // const userDetails = useAppSelector((state) => state);
-  // const { mode, toggleTheme } = useThemeMode();
-
-  // const navigate = useNavigate();
-  // const dispatch = useAppDispatch();
-
-  // console.log("UserDetails: ", userDetails);
-
-  // const onLogoutHandler = () => {
-  //   dispatch(signOut());
-  //   dispatch(clearUserDetails());
-
-  //   navigate("/login");
-  // };
-
   return (
-    // <>
-    //   <Button variant="contained" onClick={onLogoutHandler}>
-    //     Logout
-    //   </Button>
-
-    //   <IconButton color="inherit" onClick={toggleTheme}>
-    //     {mode === "light" ? <DarkMode /> : <LightMode />}
-    //   </IconButton>
-    // </>
-
-    <Stack sx={{ flexDirection: "row", height: "100vh" }}>
+    <Stack
+      sx={{
+        flexDirection: "row",
+        height: "100vh",
+        backgroundColor: "background.paper",
+        overflow: "hidden",
+      }}
+    >
       <Sidebar />
-      <Box>
+
+      {/* Main content column */}
+      <Box
+        sx={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          minWidth: 0,
+          overflow: "hidden",
+        }}
+      >
         <Header />
-        <Outlet />
+
+        {/* Page content */}
+        <Box
+          sx={{
+            flex: 1,
+            overflowY: "auto",
+            p: 3,
+            // Custom scrollbar
+            "&::-webkit-scrollbar": { width: 6 },
+            "&::-webkit-scrollbar-track": { backgroundColor: "transparent" },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: "rgba(255,255,255,0.1)",
+              borderRadius: 3,
+            },
+            "&::-webkit-scrollbar-thumb:hover": {
+              backgroundColor: "rgba(255,255,255,0.18)",
+            },
+          }}
+        >
+          <Outlet />
+        </Box>
       </Box>
     </Stack>
   );

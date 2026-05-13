@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import { ThemeModeProvider } from "./context/ThemeContext.tsx";
 import { ToastProvider } from "./context/ToastContext.tsx";
 
+import "./styles/global.scss";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
