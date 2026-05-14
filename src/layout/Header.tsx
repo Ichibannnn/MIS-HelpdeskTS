@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, IconButton, Box, Badge, Avatar, Tooltip, Typography } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Box, Badge, Avatar, Tooltip, Typography, type Theme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
@@ -19,7 +19,7 @@ const Header = () => {
       position="sticky"
       elevation={0}
       sx={{
-        backgroundColor: "background.paper",
+        backgroundColor: (theme: Theme) => theme.custom.paperColor.secondary,
         // borderBottom: "1px solid rgba(255,255,255,0.07)",
         // backgroundImage: "none",
         zIndex: (theme) => theme.zIndex.drawer - 1,

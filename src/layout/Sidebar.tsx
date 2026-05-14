@@ -1,6 +1,6 @@
 // components/Sidebar.tsx
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Box, Typography, Divider, Tooltip, Avatar, Chip, Stack } from "@mui/material";
-import { Dashboard, ShoppingCart, BarChart, MenuBook, Settings, Notifications, TrendingUp, People, Logout } from "@mui/icons-material";
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Box, Typography, Divider, Tooltip, Avatar, Chip, Stack, type Theme } from "@mui/material";
+import { Dashboard, ShoppingCart, BarChart, MenuBook, Notifications, TrendingUp, People, Logout } from "@mui/icons-material";
 
 import { useSelector } from "react-redux";
 import { useState } from "react";
@@ -47,13 +47,13 @@ const sidebarStyles = {
     width: isOpen ? drawerWidth : collapsedWidth,
     transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
     overflowX: "hidden" as const,
-    backgroundColor: "background.paper",
+    backgroundColor: (theme: Theme) => theme.custom.paperColor.primary,
     color: "#fff",
     borderRight: "1px solid rgba(255,255,255,0.06)",
     borderRadius: 0,
     display: "flex",
     flexDirection: "column" as const,
-    // backgroundImage: "linear-gradient(180deg, rgba(245,158,11,0.04) 0%, transparent 30%)",
+    boxShadow: "4px 10px 22px -1px rgba(0,0,0,0.35);-webkit-box-shadow: 4px 10px 22px -1px rgba(0,0,0,0.35);-moz-box-shadow: 4px 10px 22px -1px rgba(0,0,0,0.35;",
   }),
 };
 

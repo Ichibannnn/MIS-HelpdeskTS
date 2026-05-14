@@ -1,5 +1,5 @@
 // components/Landing.tsx
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, type Theme } from "@mui/material";
 import { Outlet } from "react-router";
 
 import Header from "./Header";
@@ -11,7 +11,7 @@ const Landing = () => {
       sx={{
         flexDirection: "row",
         height: "100vh",
-        backgroundColor: "background.paper",
+        backgroundColor: (theme: Theme) => theme.custom.paperColor.secondary,
         overflow: "hidden",
       }}
     >
