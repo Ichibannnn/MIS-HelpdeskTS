@@ -47,7 +47,7 @@ const sidebarStyles = {
     width: isOpen ? drawerWidth : collapsedWidth,
     transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
     overflowX: "hidden" as const,
-    backgroundColor: (theme: Theme) => theme.custom.paperColor.primary,
+    backgroundColor: (theme: Theme) => theme.custom.paperColor.secondary,
     color: "#fff",
     borderRight: "1px solid rgba(255,255,255,0.06)",
     borderRadius: 0,
@@ -83,47 +83,16 @@ const Sidebar = () => {
       variant="permanent"
       sx={{
         width: isOpen ? drawerWidth : collapsedWidth,
-        flexShrink: 0,
         "& .MuiDrawer-paper": sidebarStyles.paper(isOpen),
       }}
     >
       {/* ── LOGO ── */}
-      <Box
-        sx={{
-          px: 2,
-          py: 2.5,
-          display: "flex",
-          alignItems: "center",
-          gap: 1.5,
-          minHeight: 64,
-        }}
-      >
-        <Box
-          sx={{
-            width: 38,
-            height: 38,
-            borderRadius: "10px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontWeight: 800,
-            fontSize: 18,
-            flexShrink: 0,
-            letterSpacing: "-0.5px",
-          }}
-        >
+      <Box sx={sbStyles.headerContainer}>
+        <Box sx={sbStyles.logoContainer}>
           <img src={helpDeskLogo} alt="dotek-icon" width="54" height="28" className="logo-sidebar" />
         </Box>
 
-        <Box
-          sx={{
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            transition: "opacity 0.2s, width 0.3s",
-            opacity: isOpen ? 1 : 0,
-            width: isOpen ? "auto" : 0,
-          }}
-        >
+        <Box sx={{ ...sbStyles.logoTextContainer, opacity: isOpen ? 1 : 0, transform: isOpen ? "translateX(0)" : "translateX(-10px)" }}>
           <Stack direction="row" gap={0.5} mt={0.5}>
             <Typography sx={sbStyles.misText}>MIS</Typography>
             <Typography sx={sbStyles.heldeskText}>HELPDESK</Typography>
@@ -133,38 +102,22 @@ const Sidebar = () => {
         </Box>
       </Box>
 
-      <Divider sx={{ bgcolor: "rgba(255,255,255,0.07)", mx: 1.5 }} />
+      <Divider sx={sbStyles.sidebarDivider} />
 
       {/* ── NAV SECTIONS ── */}
-      <Box sx={{ flex: 1, overflowY: "auto", overflowX: "hidden", py: 1 }}>
+      <Box sx={sbStyles.navSectionContainer}>
         {menuSections.map((section) => (
           <Box key={section.section} sx={{ mb: 0.5 }}>
             {/* Section label */}
             <Box
               sx={{
-                px: 2,
-                pt: 2,
-                pb: 0.5,
-                overflow: "hidden",
-                transition: "opacity 0.2s, height 0.3s",
+                ...sbStyles.navSectionLabelContainer,
                 opacity: isOpen ? 1 : 0,
                 height: isOpen ? "auto" : 0,
               }}
             >
-              <Typography
-                sx={{
-                  fontSize: 10,
-                  fontWeight: 700,
-                  letterSpacing: "1.8px",
-                  textTransform: "uppercase",
-                  color: "rgba(148,163,184,0.6)",
-                }}
-              >
-                {section.section}
-              </Typography>
+              <Typography sx={sbStyles.navSectionText}>{section.section}</Typography>
             </Box>
-
-            {!isOpen && <Divider sx={{ bgcolor: "rgba(255,255,255,0.05)", my: 1, mx: 1.5 }} />}
 
             <List disablePadding>
               {section.items.map((item) => {
@@ -216,7 +169,7 @@ const Sidebar = () => {
                               width: 3,
                               borderRadius: "0 4px 4px 0",
                               backgroundColor: "#F59E0B",
-                              boxShadow: "0 0 8px rgba(245,158,11,0.6)",
+                              boxShadow: isActive ? "0 0 0 1px rgba(245,158,11,0.2), 0 4px 12px rgba(245,158,11,0.15)" : "none",
                             }
                           : {},
                       }}

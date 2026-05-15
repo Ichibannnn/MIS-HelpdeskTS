@@ -19,7 +19,7 @@ const Header = () => {
       position="sticky"
       elevation={0}
       sx={{
-        backgroundColor: (theme: Theme) => theme.custom.paperColor.secondary,
+        backgroundColor: (theme: Theme) => theme.custom.paperColor.primary,
         // borderBottom: "1px solid rgba(255,255,255,0.07)",
         // backgroundImage: "none",
         zIndex: (theme) => theme.zIndex.drawer - 1,

@@ -11,7 +11,7 @@ const Landing = () => {
       sx={{
         flexDirection: "row",
         height: "100vh",
-        backgroundColor: (theme: Theme) => theme.custom.paperColor.secondary,
+        backgroundColor: (theme: Theme) => theme.custom.paperColor.primary,
         overflow: "hidden",
       }}
     >

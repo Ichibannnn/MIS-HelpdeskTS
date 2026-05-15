@@ -3,6 +3,7 @@ interface MenuItem {
   icon: React.ReactNode;
   path: string;
   badge?: string;
+  children?: MenuItem[];
 }
 
 export interface MenuSection {

@@ -41,8 +41,8 @@ const palette = (mode: PaletteMode): ThemeOptions => ({
       mode === "light" ? "linear-gradient(227deg, rgba(83, 59, 140, 1) 21%, rgba(242, 242, 242, 1) 81%)" : "linear-gradient(227deg, rgba(83, 59, 140, 1) 21%, #0e1320 81%)",
     paperColor: {
       primary: mode === "light" ? "#FFFFFF" : "#0E1320",
-      secondary: mode === "light" ? "#F9FAFB" : "#111927",
-      tertiary: mode === "light" ? "#F3F4F6" : "#1C2536",
+      secondary: mode === "light" ? "#F9FAFB" : "#1C2536",
+      tertiary: mode === "light" ? "#F3F4F6" : "#111927",
     },
   },
 });
